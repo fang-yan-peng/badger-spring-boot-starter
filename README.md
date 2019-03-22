@@ -135,12 +135,15 @@ Badger针对springboot提供的starter
      */   
     @Data
     @Table(tableName = "user", dataSourceName="ds1")
-    public class User {
-    
-        private int id;
-    
+    public class User {   
+        @Id
+        @Column
+        private int id;   
+     
+        @Column
         private String name;
     
+        @Column
         private int age;
     }
 
