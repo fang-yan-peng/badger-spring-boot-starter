@@ -9,12 +9,21 @@ Badger针对springboot提供的starter
 >  * 编译工具 [Maven][maven] or [Gradle][gradle]
 
 ## 添加依赖
+> spring boot2.x依赖包如下：
    ```xml
     <dependency>
         <groupId>org.jfaster</groupId>
         <artifactId>badger-spring-boot-starter</artifactId>
         <version>1.6</version>
     </dependency>
+   ```
+> spring boot1.x依赖包如下：   
+   ```xml
+       <dependency>
+           <groupId>org.jfaster</groupId>
+           <artifactId>badger-spring-boot-starter</artifactId>
+           <version>1.5</version>
+       </dependency>
    ```
    
 ## 配置yml或者properties文件
