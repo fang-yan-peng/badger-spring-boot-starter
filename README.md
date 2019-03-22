@@ -68,10 +68,18 @@ Badger针对springboot提供的starter
     
 
       src/main/resources/application.properties
+      
+      #sql方言，默认即可
       #badger.dialect=mysql
+      #分页查询时每页查询的最大条数，不能大于此限制，如果大于会赋值成200
       #badger.page-size-limit=200
+      #badger的事务管理器，只支持badger和spring，默认是badger，如果使用spring得配置事务管理器
+      #badger.transaction-manager=badger
+       #由于badger支持分库分表，出于性能考虑会缓存sql的解析结果（不是返回结果），默认是10000
       #badger.cache-sql-limit=10000
+      #设置拦截器,实现org.jfaster.badger.sql.interceptor.SqlInterceptor接口，可以在sql执行前后做一些事情
       #badger.interceptor-class=org.jfaster.badger.sql.interceptor.iml.SqlInterceptorImpl
+      #设置拦截器引用,填写spring容器中sql拦截器的bean的id。和interceptor-class只能存在其一。
       #badger.interceptor-ref=badgerInterceptor
       
       #badger引用数据源名配置，ds1和ds2..是数据源的key，可以自定义，如果没有slave，可以不配置。
