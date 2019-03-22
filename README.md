@@ -123,9 +123,7 @@ Badger针对springboot提供的starter
 
 ## 创建dao，并启动应用
  
-1.
-    
-    `src/main/java/org/jfaster/badger/pojo/User.java`
+1. `src/main/java/org/jfaster/badger/pojo/User.java`
 
     ```java
     package org.jfster.badger.pojo;
@@ -174,9 +172,7 @@ Badger针对springboot提供的starter
 
     ```
 
-2. 
-
-   `src/main/java/org/jfaster/badger/TestApplication.java`
+2. `src/main/java/org/jfaster/badger/TestApplication.java`
 
    ```java
 
