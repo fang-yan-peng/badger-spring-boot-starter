@@ -29,7 +29,7 @@ Badger针对springboot提供的starter
       #由于badger支持分库分表，出于性能考虑会缓存sql的解析结果（不是返回结果），默认是10000
       #cache-sql-limit: 10000
       #badger的事务管理器，只支持badger和spring，默认是badger，如果使用spring得配置事务管理器
-      #transactionManager: badger
+      #transaction-manager: badger
       #badger引用数据源名配置，ds1和ds2..是数据源的key，可以自定义，如果没有slave，可以不配置。
       #badger中的连接池使用hikaricp，所以hikaricp中的配置在此都可以配置。
       datasources:
