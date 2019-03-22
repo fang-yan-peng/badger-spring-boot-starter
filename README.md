@@ -5,7 +5,7 @@ Badger针对springboot提供的starter
 
 # 例子
 >  * JDK 1.8 or above
->  * springboot 2.x
+>  * springboot 2.x and 1.X
 >  * 编译工具 [Maven][maven] or [Gradle][gradle]
 
 ## 添加依赖
