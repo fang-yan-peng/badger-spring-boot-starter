@@ -59,7 +59,6 @@ Badger针对springboot提供的starter
         #    password: 272777475
         #    maximum-pool-size: 10
         #    connection-timeout: 3000
-      #获取mango实例工厂，默认是org.jfaster.mango.plugin.spring.DefaultMangoFactoryBean，从spring容器中获取mango实例
       #设置拦截器,实现org.jfaster.badger.sql.interceptor.SqlInterceptor接口，可以在sql执行前后做一些事情
       #interceptor-class: org.jfaster.badger.sql.interceptor.iml.SqlInterceptorImpl
       #设置拦截器引用,填写spring容器中sql拦截器的bean的id。和interceptor-class只能存在其一。
@@ -67,39 +66,39 @@ Badger针对springboot提供的starter
     
 
       src/main/resources/application.properties
-      #mango.dialect=mysql
-      #mango.page-size-limit=200
-      #mango.cache-sql-limit=10000
-      #mango.interceptor-class=org.jfaster.badger.sql.interceptor.iml.SqlInterceptorImpl
-      #mango.interceptor-ref=badgerInterceptor
+      #badger.dialect=mysql
+      #badger.page-size-limit=200
+      #badger.cache-sql-limit=10000
+      #badger.interceptor-class=org.jfaster.badger.sql.interceptor.iml.SqlInterceptorImpl
+      #badger.interceptor-ref=badgerInterceptor
       
-      #mango引用数据源名配置，ds1和ds2..是数据源的key，可以自定义，如果没有slave，可以不配置。
-      #mango中的连接池使用hikaricp，所以hikaricp中的配置在此都可以配置。      
-      mango.datasources[0].name=ds1
-      mango.datasources[0].master.driver-class-name=com.mysql.jdbc.Driver
-      mango.datasources[0].master.jdbc-url=jdbc:mysql://127.0.0.1:3306/test
-      mango.datasources[0].master.user-name=root
-      mango.datasources[0].master.password=272777475
-      mango.datasources[0].master.maximum-pool-size=10
-      mango.datasources[0].master.connection-timeout=3000
+      #badger引用数据源名配置，ds1和ds2..是数据源的key，可以自定义，如果没有slave，可以不配置。
+      #badger中的连接池使用hikaricp，所以hikaricp中的配置在此都可以配置。      
+      badger.datasources[0].name=ds1
+      badger.datasources[0].master.driver-class-name=com.mysql.jdbc.Driver
+      badger.datasources[0].master.jdbc-url=jdbc:mysql://127.0.0.1:3306/test
+      badger.datasources[0].master.user-name=root
+      badger.datasources[0].master.password=272777475
+      badger.datasources[0].master.maximum-pool-size=10
+      badger.datasources[0].master.connection-timeout=3000
       
-      #mango.datasources[0].slaves[0].driver-class-name=com.mysql.jdbc.Driver
-      #mango.datasources[0].slaves[0].jdbc-url-class-name=jdbc:mysql://127.0.0.1:3306/test
-      #mango.datasources[0].slaves[0].user-name=root
-      #mango.datasources[0].slaves[0].password=272777475
-      #mango.datasources[0].slaves[0].maximum-pool-size=10
-      #mango.datasources[0].slaves[0].connection-timeout=3000
+      #badger.datasources[0].slaves[0].driver-class-name=com.mysql.jdbc.Driver
+      #badger.datasources[0].slaves[0].jdbc-url-class-name=jdbc:mysql://127.0.0.1:3306/test
+      #badger.datasources[0].slaves[0].user-name=root
+      #badger.datasources[0].slaves[0].password=272777475
+      #badger.datasources[0].slaves[0].maximum-pool-size=10
+      #badger.datasources[0].slaves[0].connection-timeout=3000
       
       #如果不想使用内置的连接池，在此指定其他数据源的bean。
-      #mango.datasource[0].slaves[1].ref=其他数据源在spring中的id
+      #badger.datasource[0].slaves[1].ref=其他数据源在spring中的id
       
-      #mango.datasources[1].name=ds2
-      #mango.datasources[1].master.driver-class-name=com.mysql.jdbc.Driver
-      #mango.datasources[1].master.jdbc-url-class-name=jdbc:mysql://127.0.0.1:3306/test
-      #mango.datasources[1].master.user-name=root
-      #mango.datasources[1].master.password=272777475
-      #mango.datasources[1].master.maximum-pool-size=10
-      #mango.datasources[1].master.connection-timeout=3000
+      #badger.datasources[1].name=ds2
+      #badger.datasources[1].master.driver-class-name=com.mysql.jdbc.Driver
+      #badger.datasources[1].master.jdbc-url-class-name=jdbc:mysql://127.0.0.1:3306/test
+      #badger.datasources[1].master.user-name=root
+      #badger.datasources[1].master.password=272777475
+      #badger.datasources[1].master.maximum-pool-size=10
+      #badger.datasources[1].master.connection-timeout=3000
 
 > 注释部分不是必须配置项，可以根据自己需要自行配置。
 
@@ -132,10 +131,7 @@ Badger针对springboot提供的starter
 
     ```java
     package org.jfster.badger.dao;
-    
-    import org.jfaster.mango.annotation.DB;
-    import org.jfaster.mango.annotation.SQL;
-    import org.jfster.mango.pojo.User;
+    import org.jfster.badger.pojo.User;
     
     import java.util.List;
     
@@ -162,10 +158,10 @@ Badger针对springboot提供的starter
 
    ```java
 
-   package org.jfster.mango;
+   package org.jfster.badger;
    
-   import org.jfster.mango.dao.UserDao;
-   import org.jfster.mango.pojo.User;
+   import org.jfster.badger.dao.UserDao;
+   import org.jfster.badger.pojo.User;
    import org.springframework.boot.SpringApplication;
    import org.springframework.boot.autoconfigure.SpringBootApplication;
    import org.springframework.context.ApplicationContext;
