@@ -14,7 +14,7 @@ Badger针对springboot提供的starter
     <dependency>
         <groupId>org.jfaster</groupId>
         <artifactId>badger-spring-boot-starter</artifactId>
-        <version>1.6</version>
+        <version>1.7</version>
     </dependency>
    ```
 > spring boot1.x依赖包如下：   
