@@ -15,6 +15,17 @@ Badger针对springboot提供的starter
         <groupId>org.jfaster</groupId>
         <artifactId>badger-spring-boot-starter</artifactId>
         <version>1.7</version>
+        <exclusions>
+            <exclusion>
+                <groupId>org.jfaster</groupId>
+                <artifactId>badger</artifactId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+    <dependency>
+        <groupId>org.jfaster</groupId>
+        <artifactId>badger</artifactId>
+        <version>1.8</version>
     </dependency>
    ```
 > spring boot1.x依赖包如下：   
@@ -23,6 +34,17 @@ Badger针对springboot提供的starter
            <groupId>org.jfaster</groupId>
            <artifactId>badger-spring-boot-starter</artifactId>
            <version>1.5</version>
+           <exclusions>
+               <exclusion>
+                   <groupId>org.jfaster</groupId>
+                   <artifactId>badger</artifactId>
+               </exclusion>
+           </exclusions>
+       </dependency>
+       <dependency>
+           <groupId>org.jfaster</groupId>
+           <artifactId>badger</artifactId>
+           <version>1.8</version>
        </dependency>
    ```
    
