@@ -44,7 +44,7 @@ Badger针对springboot提供的starter
        <dependency>
            <groupId>org.jfaster</groupId>
            <artifactId>badger</artifactId>
-           <version>2.1</version>
+           <version>2.2</version>
        </dependency>
    ```
    
